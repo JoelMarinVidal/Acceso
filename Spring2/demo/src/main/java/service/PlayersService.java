@@ -6,4 +6,5 @@ import entity.Players;
 
 public interface PlayersService {
     public List<Players> findAll();
+    public Players save(Players player);
 }

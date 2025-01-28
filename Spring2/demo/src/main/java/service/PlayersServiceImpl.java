@@ -9,14 +9,18 @@ import dao.PlayersDao;
 import entity.Players;
 
 @Service
-public class PlayersServiceImpl implements PlayersService{
+public class PlayersServiceImpl implements PlayersService {
     @Autowired
     private PlayersDao playersDao;
 
     @Override
     public List<Players> findAll() {
-        return (List<Players>)playersDao.findAll();
+        return (List<Players>) playersDao.findAll();
     }
 
-    
+    @Override
+    public Players save(Players player) {
+        return playersDao.save(player);
+    }
+
 }
