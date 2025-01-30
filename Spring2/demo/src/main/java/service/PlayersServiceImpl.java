@@ -25,8 +25,13 @@ public class PlayersServiceImpl implements PlayersService {
     }
 
     @Override
-    public Optional<Players> findById(Integer id) {
-        return playersDao.findById(id);
+    public Players findById(Integer id) {
+        return playersDao.findById(id).orElse(null);
+    }
+
+    @Override
+    public void delete(Players p) {
+        playersDao.delete(p);
     }
 
 }

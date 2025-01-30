@@ -8,5 +8,6 @@ import entity.Players;
 public interface PlayersService {
     public List<Players> findAll();
     public Players save(Players player);
-    public Optional<Players> findById(Integer id);
+    public Players findById(Integer id);
+    public void delete(Players p);
 }
