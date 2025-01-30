@@ -9,5 +9,5 @@ public interface PlayersService {
     public List<Players> findAll();
     public Players save(Players player);
     public Players findById(Integer id);
-    public void delete(Players p);
+    public void deleteById(Integer id);
 }

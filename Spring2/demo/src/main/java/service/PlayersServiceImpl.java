@@ -30,8 +30,8 @@ public class PlayersServiceImpl implements PlayersService {
     }
 
     @Override
-    public void delete(Players p) {
-        playersDao.delete(p);
+    public void deleteById(Integer id) {
+        playersDao.deleteById(id);
     }
 
 }
