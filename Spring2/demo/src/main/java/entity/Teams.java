@@ -3,6 +3,9 @@ package entity;
 
 import java.util.HashSet;
 import java.util.Set;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -28,8 +31,11 @@ public class Teams implements java.io.Serializable {
 	private String city;
 	private String conference;
 	private String division;
+	@JsonIgnore
 	private Set<Matches> matchesesForVisitorTeam = new HashSet<Matches>(0);
+	@JsonIgnore
 	private Set<Players> playerses = new HashSet<Players>(0);
+	@JsonIgnore
 	private Set<Matches> matchesesForLocalTeam = new HashSet<Matches>(0);
 
 	public Teams() {

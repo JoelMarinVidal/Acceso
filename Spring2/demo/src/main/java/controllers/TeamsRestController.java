@@ -28,11 +28,18 @@ public class TeamsRestController {
         return teamsService.findAll();
     }
 
-    
+    @GetMapping("/teams/{id}")
+    public Teams getById(@PathVariable String id) {
+        return teamsService.findById(id);
+    }
 
-    /*@DeleteMapping("/teams/{id}")
+
+    @DeleteMapping("/teams/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void delete(@PathVariable int id){
-        Teams team = 
-    }*/
+    public void delete(@PathVariable String id){
+        Teams team = teamsService.findById(id);
+        if (team != null) {
+            teamsService.delete(team);
+        }
+    }
 }
