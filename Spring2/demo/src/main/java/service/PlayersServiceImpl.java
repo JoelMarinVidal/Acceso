@@ -1,6 +1,7 @@
 package service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,6 +22,11 @@ public class PlayersServiceImpl implements PlayersService {
     @Override
     public Players save(Players player) {
         return playersDao.save(player);
+    }
+
+    @Override
+    public Optional<Players> findById(Integer id) {
+        return playersDao.findById(id);
     }
 
 }
