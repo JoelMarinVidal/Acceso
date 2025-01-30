@@ -28,4 +28,9 @@ public class TeamsServiceImpl implements TeamsService {
         return teamsDao.findById(id).orElse(null);
     }
 
+    @Override
+    public Teams save(Teams team) {
+        return teamsDao.save(team);
+    }
+
 }

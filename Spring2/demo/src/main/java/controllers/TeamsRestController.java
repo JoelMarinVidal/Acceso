@@ -8,11 +8,12 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import entity.Players;
 import entity.Teams;
 import service.TeamsService;
 
@@ -33,6 +34,10 @@ public class TeamsRestController {
         return teamsService.findById(id);
     }
 
+    @PostMapping("/teams")
+    public Teams saveTeams(@RequestBody Teams team) {
+        return teamsService.save(team);
+    }
 
     @DeleteMapping("/teams/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)

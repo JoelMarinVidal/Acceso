@@ -45,7 +45,7 @@ public class PlayersRestController {
 
     @DeleteMapping("/players/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void delete(@PathVariable int id) {
+    public void delete(@PathVariable Integer id) {
         Players pla = playersService.findById(id);
         if (pla != null) {
             playersService.delete(pla);

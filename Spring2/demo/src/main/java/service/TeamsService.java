@@ -10,4 +10,5 @@ public interface TeamsService {
     public void delete(Teams team);
     public List<Teams> findAll();
     public Teams findById(String id);
+    public Teams save(Teams team);
 }
