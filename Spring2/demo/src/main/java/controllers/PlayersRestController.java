@@ -2,6 +2,7 @@ package controllers;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import entity.Players;
+import entity.Stats;
 import service.PlayersService;
 
 @CrossOrigin(origins = "*")
@@ -61,6 +63,18 @@ public class PlayersRestController {
         currentPlayers.setWeight(1454);
         playersService.save(currentPlayers);
         return currentPlayers;
+    }
+
+    @GetMapping("/players/{id}/stats")
+    public Set<Stats> getPlayerStats(@PathVariable Integer id){
+        Players player = playersService.findById(id);
+
+        if (player != null) {
+            return player.getStatses();
+           
+           
+        }
+        return null;
     }
 
 }

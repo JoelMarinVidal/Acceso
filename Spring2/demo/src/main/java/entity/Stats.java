@@ -1,6 +1,8 @@
 package entity;
 // Generated 9 ene 2025, 19:43:53 by Hibernate Tools 4.3.6.Final
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.AttributeOverride;
 import jakarta.persistence.AttributeOverrides;
 import jakarta.persistence.Column;
@@ -26,6 +28,7 @@ public class Stats implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private StatsId id;
+	@JsonIgnore
 	private Players players;
 	private Float pointsPerMatch;
 	private Float assistancesPerMatch;
