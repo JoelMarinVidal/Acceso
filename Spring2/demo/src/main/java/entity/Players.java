@@ -6,6 +6,7 @@ import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -136,7 +137,7 @@ public class Players implements java.io.Serializable {
 		this.salary = salary;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "players")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "players", cascade = CascadeType.ALL)
 	public Set<Stats> getStatses() {
 		return this.statses;
 	}

@@ -29,6 +29,7 @@ public class Stats implements java.io.Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private StatsId id;
 	@JsonIgnore
+	@JoinColumn(name = "code")
 	private Players players;
 	private Float pointsPerMatch;
 	private Float assistancesPerMatch;
